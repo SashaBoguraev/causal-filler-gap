@@ -1,0 +1,317 @@
+{
+    "wh_question_animate_embedded_clause": {
+        "templates": [
+            "{prefix} {filler}{nc}{article1} {np1} {verb1} {that} {article2} {np2} {verb2}"
+        ],
+        "label": ["filler", "nc"],
+        "result_prepend_space": false,
+        "labels": {
+            "base":[" him", " her", " us", " them"], 
+            "fg": [" after", " before", " in", " on", "?"]       
+        },
+        "variables": {
+            "prefix": [""],
+            "filler": {
+                "base": [""],
+                "fg": ["Who"]
+            },
+            "nc": {
+                "base": ["Did", "Will"],
+                "fg": [" did", " will"]
+            },
+            "article1": [" the"],
+            "article2": ["the"],
+            "np1": ["committee", "businessman", "company", "movie star", "suspect", 
+                    "man", "nurse", "gossip column", "authorities", "government", 
+                    "neighbors", "student", "university", "restaurant", "newspaper"],
+            "verb1": ["say", "know", "state", "acknowledge", "disclose", "signal", 
+                        "state", "find out", "forget", "indicate", "recall", "confirm"],
+            "that": ["that"],
+            "np2": [
+                "employee", "student", "teacher", "doctor", 
+                "worker", "customer", "client", "manager", 
+                "stranger", "passerby", "volunteer", 
+                "nurse", "engineer", "scientist", "artist", 
+                "musician", "author", "chef", "athlete", 
+                "photographer", "librarian"
+            ],
+            "verb2": [
+                "resembled", "replaced", "succeeded", "accompanied", "followed", 
+                "challenged", "confronted", "supported", "represented", "befriended",
+                "hated", "loved", "liked", "disliked"
+            ]
+        }
+    },
+    "embedded_wh_finite_animate_embedded_clause": {
+        "templates": [
+            "{prefix} {filler}{nc}{article1} {np1} {verb1} {that} {article2} {np2} {verb2}"
+        ],
+        "label": "filler",
+        "result_prepend_space": false,
+        "labels": {
+            "base":[" him", " her", " us", " them"], 
+            "fg": [" after", " before", " in", " on", "."]                   
+        },
+        "variables": {
+            "prefix": ["I know", "My neighbor told me", "She told me", "She knows", 
+                        "We all remember", "My boss asked", "The video showed", "The article mentioned",
+                        "We recall", "I remember", "Our friend knew", "The mayor told me", 
+                        "My friend remembers", "The newspaper reported", "Our neighbor revealed", 
+                        "She can not believe", "Our father reminded us"],
+            "filler": {
+                "base": ["that"],
+                "fg": ["who"]
+            },
+            "nc": [""],
+            "article1": [" the"],
+            "article2": ["the"],
+            "np1": ["committee", "businessman", "company", "movie star", "suspect", 
+                    "man", "nurse", "gossip column", "authorities", "government", 
+                    "neighbors", "student", "university", "restaurant", "newspaper"],
+            "verb1": ["said", "knew", "stated", "acknowledged", "disclosed", "signaled", 
+                        "stated", "found out", "forgot", "indicated", "recalled", "confirmed"],
+            "that": ["that"],
+            "np2": [
+                "employee", "student", "teacher", "doctor", 
+                "worker", "customer", "client", "manager", 
+                "stranger", "passerby", "volunteer", 
+                "nurse", "engineer", "scientist", "artist", 
+                "musician", "author", "chef", "athlete", 
+                "photographer", "librarian"
+            ],
+            "verb2": [
+                "resembled", "replaced", "succeeded", "accompanied", "followed", 
+                "challenged", "confronted", "supported", "represented", "befriended",
+                "hated", "loved", "liked", "disliked"
+            ]
+        }
+    },
+    "embedded_wh_nonfinite_animate_embedded_clause": {
+        "templates": [
+            "{prefix} {filler}{nc}{article1} {np1} {verb1} {that} {article2} {np2} {verb2}"
+        ],
+        "label": "filler",
+        "result_prepend_space": false,
+        "labels": {
+            "base":[" him", " her", " us", " them"], 
+            "fg": [" after", " before", " in", " on", "."]   
+        },
+        "variables": {
+            "prefix": ["I wonder", "He's wondering", "They asked",
+                        "Can he remember", "Let's ask", "They need to find out", 
+                        "We should ask", "I want to know", "She is curious",
+                        "I am curious", "We are curious", "She is wondering"],
+            "filler": {
+                "base": ["if"],
+                "fg": ["who"]
+            },
+            "nc": [""],
+            "article1": [" the"],
+            "article2": ["the"],
+            "np1": ["committee", "businessman", "company", "movie star", "suspect", 
+                    "man", "nurse", "gossip column", "authorities", "government", 
+                    "neighbors", "student", "university", "restaurant", "newspaper"],
+            "verb1": ["said", "knew", "stated", "acknowledged", "disclosed", "signaled", 
+                        "stated", "found out", "forgot", "indicated", "recalled", "confirmed"],
+            "that": ["that"],
+            "np2": [
+                "employee", "student", "teacher", "doctor", 
+                "worker", "customer", "client", "manager", 
+                "stranger", "passerby", "volunteer", 
+                "nurse", "engineer", "scientist", "artist", 
+                "musician", "author", "chef", "athlete", 
+                "photographer", "librarian"
+            ],
+            "verb2": [
+                "resembled", "replaced", "succeeded", "accompanied", "followed", 
+                "challenged", "confronted", "supported", "represented", "befriended",
+                "hated", "loved", "liked", "disliked"
+            ]
+        }
+    },
+    "restricted_rc_animate_embedded_clause": {
+        "templates": [
+            "{prefix} {filler}{nc}{article1} {np1} {verb1} {that} {article2} {np2} {verb2}"
+        ],
+        "label": "filler",
+        "result_prepend_space": false,
+        "labels": {
+            "base":[" him", " her", " us", " them"], 
+            "fg": [" was", " is", " became", " broke", " came", " did", " fell", " felt",
+                    " got", " went", " grew", " had", " heard", " held"]
+        },
+        "variables": {
+            "prefix": [
+                "The author", "The colleague", "The carpenter", "The leader",
+                "The chauffeur", "The coach", "The lawyer",
+                "The writer", "The actor", "The director", "The researcher", "The designer"
+            ],
+            "filler": {
+                "base": ["and"],
+                "fg": ["who", "whom"]
+            },
+            "nc": [""],
+            "article1": [" the"],
+            "article2": ["the"],
+            "np1": ["committee", "businessman", "company", "movie star", "suspect", 
+                    "man", "nurse", "gossip column", "authorities", "government", 
+                    "neighbors", "student", "university", "restaurant", "newspaper"],
+            "verb1": ["said", "knew", "stated", "acknowledged", "disclosed", "signaled", 
+                        "stated", "found out", "forgot", "indicated", "recalled", "confirmed"],
+            "that": ["that"],
+            "np2": [
+                "employee", "student", "teacher", "doctor", 
+                "worker", "customer", "client", "manager", 
+                "stranger", "passerby", "volunteer", 
+                "nurse", "engineer", "scientist", "artist", 
+                "musician", "author", "chef", "athlete", 
+                "photographer", "librarian"
+            ],
+            "verb2": [
+                "resembled", "replaced", "succeeded", "accompanied", "followed", 
+                "challenged", "confronted", "supported", "represented", "befriended",
+                "hated", "loved", "liked", "disliked"
+            ]
+        }
+    },
+    "cleft_animate_embedded_clause": {
+        "templates": [
+            "{prefix} {filler}{nc}{article1} {np1} {verb1} {that} {article2} {np2} {verb2}"
+        ],
+        "label": "filler",
+        "result_prepend_space": false,
+        "labels": {
+            "base":[" him", " her", " us", " them"], 
+            "fg": [" after", " before", " in", " on", "."]       
+        },
+        "variables": {
+            "prefix": ["It is", "It was"],
+            "filler": {
+                "base": [
+                    "clear", "apparent", "obvious", "sad", "disastrous", "enjoyable", "funny", "interesting", "surprising", "shocking", 
+                    "amazing", "exciting", "frightening", "scary", "terrifying", "horrible", "terrible", "awful", "unbelievable", 
+                    "unimaginable", "unthinkable"
+                ],
+                "fg": [
+                    "the author", "the neighbors", 
+                    "the manager", "the colleague", "the carpenter", "the leader",
+                    "the chauffeur", "the coach", "the lawyer", "the good friend", 
+                    "the writer", "the actor", "the director", "the researcher", "the designer"
+                ]
+            },
+            "nc": [" that"],
+            "article1": [" the"],
+            "article2": ["the"],
+            "np1": ["businessman", "company", "movie star", "suspect", 
+                    "man", "nurse", "gossip column", "authorities", "government", 
+                    "neighbors", "student", "university", "restaurant", "newspaper"],
+            "verb1": ["said", "knew", "stated", "acknowledged", "disclosed", "signaled", 
+                        "stated", "found out", "forgot", "indicated", "recalled", "confirmed"],
+            "that": ["that"],
+            "np2": [
+                "employee", "student", "teacher", "doctor", 
+                "worker", "customer", "client", "manager", 
+                "stranger", "passerby", "volunteer", 
+                "nurse", "engineer", "scientist", "artist", 
+                "musician", "author", "chef", "athlete", 
+                "photographer", "librarian"
+            ],
+            "verb2": [
+                "resembled", "replaced", "succeeded", "accompanied", "followed", 
+                "challenged", "confronted", "supported", "represented", "befriended",
+                "hated", "loved", "liked", "disliked"
+            ]
+        }
+    },
+    "pseudo_cleft_animate_embedded_clause": {
+        "templates": [
+            "{prefix} {filler}{nc}{article1} {np1} {verb1} {that} {article2} {np2} {verb2}"
+        ],
+        "label": ["filler", "article1"],
+        "result_prepend_space": false,
+        "labels": {
+            "base":[" him", " her", " us", " them"], 
+            "fg": [" was", " is"]   
+        },
+        "variables": {
+            "prefix": [""],
+            "filler": {
+                "base": [""],
+                "fg": ["Who"]
+            },
+            "nc": [""],
+            "article1": {
+                "base": ["The"],
+                "fg": [" the"]
+            },
+            "article2": ["the"],
+            "np1": ["committee", "businessman", "company", "movie star", "suspect", 
+                    "man", "nurse", "gossip column", "authorities", "government", 
+                    "neighbors", "student", "university", "restaurant", "newspaper"],
+            "verb1": ["said", "knew", "stated", "acknowledged", "disclosed", "signaled", 
+                        "stated", "found out", "forgot", "indicated", "recalled", "confirmed"],
+            "that": ["that"],
+            "np2": [
+                "employee", "student", "teacher", "doctor", 
+                "worker", "customer", "client", "manager", 
+                "stranger", "passerby", "volunteer", 
+                "nurse", "engineer", "scientist", "artist", 
+                "musician", "author", "chef", "athlete", 
+                "photographer", "librarian"
+            ],
+            "verb2": [
+                "resembled", "replaced", "succeeded", "accompanied", "followed", 
+                "challenged", "confronted", "supported", "represented", "befriended",
+                "hated", "loved", "liked", "disliked"
+            ]
+        }
+    },
+    "topicalization_animate_embedded_clause": {
+        "templates": [
+            "{prefix} {filler}{nc}{article1} {np1} {verb1} {that} {article2} {np2} {verb2}"
+        ],
+        "label":[ "filler"],
+        "result_prepend_space": false,
+        "labels": {
+            "base":[" him", " her", " us", " them"], 
+            "fg": [" after", " before", " in", " on", "."]   
+        },
+        "variables": {
+            "prefix": ["Actually,", "In fact,", "To be honest,", "Honestly,", "Truthfully,", "Frankly,", "Surprisingly,", 
+                        "Interestingly,", "Unexpectedly,", "Shockingly,", "Unbelievably,", "Incredibly,", 
+                        "Amazingly,", "Remarkably,", "Strangely,", "As usual,", "As always,",
+                        "As it happens,"],
+            "filler": {
+                "base": [""],
+                "fg": [
+                    "the author", "the neighbors", 
+                    "the manager", "the colleague", "the carpenter", "the leader",
+                    "the chauffeur", "the coach", "the lawyer", "the good friend", 
+                    "the writer", "the actor", "the director", "the researcher", "the designer"
+                ]
+            },
+            "nc": [""],
+            "article1": [" the"],
+            "article2": ["the"],
+            "np1": ["committee", "businessman", "company", "movie star", "suspect", 
+                    "man", "nurse", "gossip column", "authorities", "government", 
+                    "neighbors", "student", "university", "restaurant", "newspaper"],
+            "verb1": ["said", "knew", "stated", "acknowledged", "disclosed", "signaled", 
+                        "stated", "found out", "forgot", "indicated", "recalled", "confirmed"],
+            "that": ["that"],
+            "np2": [
+                "employee", "student", "teacher", "doctor", 
+                "worker", "customer", "client", "manager", 
+                "stranger", "passerby", "volunteer", 
+                "nurse", "engineer", "scientist", "artist", 
+                "musician", "author", "chef", "athlete", 
+                "photographer", "librarian"
+            ],
+            "verb2": [
+                "resembled", "replaced", "succeeded", "accompanied", "followed", 
+                "challenged", "confronted", "supported", "represented", "befriended",
+                "hated", "loved", "liked", "disliked"
+            ]
+        }
+    }
+}

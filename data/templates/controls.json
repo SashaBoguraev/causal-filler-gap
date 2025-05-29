@@ -1,0 +1,29 @@
+{
+    "control": {
+        "source": "https://syntaxgym.org/test_suite/items?test_suite=275",
+        "note": "This test is a control for non-embedded controls. It is from agr_sv_num_obj-relc (syntaxgym + causalgym).",
+        "templates": [
+            "{The} {subject}{that}{the} {object} {verbed}"
+        ],
+        "label": "subject",
+        "result_prepend_space": true,
+        "labels": {
+            "plural": ["are", "were", "have"],
+            "singular": ["is", "was", "has"]
+        },
+        "variables": {
+            "The": ["The"],
+            "subject": {
+                "singular": ["guard", "doctor", "farmer", "author", "officer", "secretary", "taxi driver", "athlete", "manager", "senator", "consultant", "teacher", "customer", "pilot", "executive", "minister", "actor", "architect", "clerk"],
+                "plural": ["customers", "authors", "actors", "senators", "athletes", "officers", "teachers", "ministers", "managers", "farmers", "guards", "pilots", "secretaries", "architects", "doctors", "consultants", "taxi drivers", "executives", "clerks"]
+            },
+            "that": [" that"],
+            "the": [" the"],
+            "verbed": ["hated", "injured", "disguised", "ignored", "embarrassed", "admired", "liked", "hurt"],
+            "object": [
+                "manager", "senator", "actor", "teacher", "doctor", "customer", "executive", "pilot", "farmer", "guard", "author", "officer", "architect", "secretary", "minister", "clerk", "athlete",
+                "officers", "teachers", "ministers", "customers", "senators", "authors", "managers", "doctors", "guards", "farmers", "pilots", "actors", "executives", "athletes", "secretaries", "architects", "clerks"
+            ]
+        }
+    }
+}

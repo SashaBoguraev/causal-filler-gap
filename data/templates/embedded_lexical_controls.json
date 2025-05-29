@@ -1,0 +1,138 @@
+{
+    "embedded_control_lexical_animate": {
+        "templates": [
+            "{prefix} {filler}{nc}{article1} {np1} {verb1} {that} {article2} {np2} {verb2}"
+        ],
+        "label": ["filler", "article1", "np1", "verb2"],
+        "result_prepend_space": false,
+        "labels": {
+            "transitive":[" him", " her", " us", " them"], 
+            "intransitive": [" after", " before", " in", " on", "."]             
+        },
+        "variables": {
+            "prefix": [""],
+            "filler": {
+                "transitive" :["Yesterday", "Last week", "Last month", "Last year",
+                              "A few weeks ago", "A few years ago", "A couple hours ago"],
+                "intransitive": ["Last night", "Last weekend", "Last summer", "Last winter", 
+                                "Last spring", "Last fall", "A few days ago", "A few months ago",
+                            "A few minutes ago"]
+            },
+            "nc": [""],
+            "article1": {
+                "transitive": [" my", " our", " her", " that"],
+                "intransitive": [" his", " their", " your", " some"]
+            },
+            "article2": ["the"],
+            "np1": {
+                "transitive": [
+                    "blacksmith", "archaeologist", "pharmacist", "zookeeper",
+                    "entrepreneur", "carpenter", "midwife", "accountant",
+                    "flight attendant", "game developer", "stagehand", "model",
+                    "announcer", "interpreter", "chauffeur", "speech therapist",
+                    "customs officer", "jeweler", "social worker", "cartographer",
+                    "mathematician", "park ranger"
+                ],
+                "intransitive": [
+                    "firefighter", "baker", "pilot", "tourist",
+                    "gardener", "dancer", "poet", "detective",
+                    "plumber", "receptionist", "janitor", "mechanic",
+                    "cashier", "barista", "farmer", "paramedic",
+                    "delivery driver", "veterinarian", "coach", "painter",
+                    "politician", "news reporter"
+                ]
+            },
+            "verb1": ["said", "knew", "stated", "acknowledged", "disclosed", "signaled", 
+                    "stated", "found out", "forgot", "indicated", "recalled", "confirmed"],
+            "that": ["that"],
+            "np2": [
+                "employee", "student", "teacher", "doctor", 
+                "worker", "customer", "client", "manager", 
+                "stranger", "passerby", "volunteer", 
+                "nurse", "engineer", "scientist", "artist", 
+                "musician", "author", "chef", "athlete", 
+                "photographer", "librarian"
+            ],
+            "verb2": {
+                "transitive": [
+                    "resembled", "replaced", "succeeded", "accompanied", "followed", 
+                    "challenged", "confronted", "supported", "represented", "befriended",
+                    "hated", "loved", "liked", "disliked"
+                ],
+                "intransitive": [
+                    "ran", "voted", "arrived", "departed", "appeared", "vanished", "existed", 
+                    "disappeared", "thrived", "slept", "laughed", "cried", "listened", "hesitated", 
+                    "sneezed", "smiled", "frowned", "waited", "reacted", "belonged"
+                ]
+            }
+        }
+    },
+    "embedded_control_lexical_inanimate": {
+        "templates": [
+            "{prefix} {filler}{nc}{article1} {np1} {verb1} {that} {article2} {np2} {verb2}"
+        ],
+        "label": ["filler", "article1", "np1", "verb2"],
+        "result_prepend_space": false,
+        "labels": {
+            "transitive": [" it", " those chairs", " that bike", " your house", " his phone", " the cabinet", " my pencil", " their pens"],
+            "intransitive": [" after", " before", " in", " on", "."]             
+        },
+        "variables": {
+            "prefix": [""],
+            "filler": {
+                "transitive" :["Yesterday", "Last week", "Last month", "Last year",
+                              "A few weeks ago", "A few years ago", "A couple hours ago"],
+                "intransitive": ["Last night", "Last weekend", "Last summer", "Last winter", 
+                                "Last spring", "Last fall", "A few days ago", "A few months ago",
+                            "A few minutes ago"]
+            },
+            "nc": [""],
+            "article1": {
+                "transitive": [" my", " our", " her", " that"],
+                "intransitive": [" his", " their", " your", " some"]
+            },
+            "article2": ["the"],
+            "np1": {
+                "transitive": [
+                    "blacksmith", "archaeologist", "pharmacist", "zookeeper",
+                    "entrepreneur", "carpenter", "midwife", "accountant",
+                    "flight attendant", "game developer", "stagehand", "model",
+                    "announcer", "interpreter", "chauffeur", "speech therapist",
+                    "customs officer", "jeweler", "social worker", "cartographer",
+                    "mathematician", "park ranger"
+                ],
+                "intransitive": [
+                    "firefighter", "baker", "pilot", "tourist",
+                    "gardener", "dancer", "poet", "detective",
+                    "plumber", "receptionist", "janitor", "mechanic",
+                    "cashier", "barista", "farmer", "paramedic",
+                    "delivery driver", "veterinarian", "coach", "painter",
+                    "politician", "news reporter"
+                ]
+            },
+            "verb1": ["said", "knew", "stated", "acknowledged", "disclosed", "signaled", 
+            "stated", "found out", "forgot", "indicated", "recalled", "confirmed"],
+            "that": ["that"],
+            "np2": [
+                "employee", "student", "teacher", "doctor", 
+                "worker", "customer", "client", "manager", 
+                "stranger", "passerby", "volunteer", 
+                "nurse", "engineer", "scientist", "artist", 
+                "musician", "author", "chef", "athlete", 
+                "photographer", "librarian"
+            ],
+            "verb2": {
+                "transitive": [
+                    "assembled", "built", "created", "constructed", "designed", "destroyed",
+                    "dismantled", "manufactured", "modified", "restored",
+                    "polished", "arranged", "rearranged", "organized"
+                ],
+                "intransitive": [
+                    "ran", "voted", "arrived", "departed", "appeared", "vanished", "existed", 
+                    "disappeared", "thrived", "slept", "laughed", "cried", "listened", "hesitated", 
+                    "sneezed", "smiled", "frowned", "waited", "reacted", "belonged"
+                ]
+            }
+        }
+    }
+}

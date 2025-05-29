@@ -1,0 +1,37 @@
+{
+    "embedded_control": {
+        "source": "https://syntaxgym.org/test_suite/items?test_suite=275",
+        "note": "This test is a control for embedded controls. It is an adapted, multi-clause version of agr_sv_num_obj-relc.",
+        "templates": [
+            "{The} {subject1}{that1}{article1} {subject2} {verb1} {that2} {article2} {object} {verbed}"
+        ],
+        "label": "subject1",
+        "result_prepend_space": true,
+        "labels": {
+            "plural": ["are", "were", "have"],
+            "singular": ["is", "was", "has"]
+        },
+        "variables": {
+            "The": ["The"],
+            "subject1": {
+                "singular": ["guard", "doctor", "farmer", "author", "officer", "secretary", "taxi driver", "athlete", "manager", "senator", "consultant", "teacher", "customer", "pilot", "executive", "minister", "actor", "architect", "clerk"],
+                "plural": ["customers", "authors", "actors", "senators", "athletes", "officers", "teachers", "ministers", "managers", "farmers", "guards", "pilots", "secretaries", "architects", "doctors", "consultants", "taxi drivers", "executives", "clerks"]
+            },
+            "subject2": [
+                "librarian", "cashier", "pilot", "technician", "banker", "curator", 
+                "mechanic", "tailor", "pharmacist", "writer", "farmer", "carpenter",
+                "waiter", "designer", "stylist"
+            ],
+            "verb1": ["hated", "admired", "heard", "asked", "discovered", "despised", "ascertained"],
+            "that1": [" that"],
+            "that2": ["that"],
+            "article1": [" the"],
+            "article2": ["the"],
+            "verbed": ["hated", "injured", "disguised", "ignored", "embarrassed", "admired", "liked", "hurt"],
+            "object": [
+                "manager", "senator", "actor", "teacher", "doctor", "customer", "executive", "pilot", "farmer", "guard", "author", "officer", "architect", "secretary", "minister", "clerk", "athlete",
+                "officers", "teachers", "ministers", "customers", "senators", "authors", "managers", "doctors", "guards", "farmers", "pilots", "actors", "executives", "athletes", "secretaries", "architects", "clerks"
+            ]
+        }
+    }
+}

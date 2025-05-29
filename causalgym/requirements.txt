@@ -1,0 +1,9 @@
+numpy==1.26.4
+pandas==2.2.2
+plotnine==0.14.1
+pyvene==0.1.6
+scikit_learn==1.5.2
+scipy==1.13.1
+torch==2.5.1
+tqdm==4.66.6
+transformers==4.46.2
