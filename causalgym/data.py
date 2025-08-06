@@ -381,7 +381,9 @@ def convert_to_huggingface_format():
     """Generate dataset files for HuggingFace upload."""
     tokenizer = AutoTokenizer.from_pretrained("EleutherAI/pythia-70m")
     tokenizer.pad_token = tokenizer.eos_token
-    datasets = [x for x in list_datasets() if x.startswith("syntaxgym/")]
+    # ===== MODIFIED ======
+    datasets = [x for x in list_datasets()]
+    # ===== END MODIFIED ======
     all_data = defaultdict(list)
     for dataset in tqdm(datasets):
         data = Dataset.load_from(dataset)
