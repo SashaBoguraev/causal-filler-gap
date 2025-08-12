@@ -639,7 +639,7 @@ df_long <- left_join(df_means, df_cis, by = c("pos", "Condition"))
 
 condition_labels <- c(
   "same_animacy_same" = "Same Animacy, Not in Train Set",
-  "diff_animacy_same" = "Difference Animacy, Not in Train Set",
+  "diff_animacy_same" = "Different Animacy, Not in Train Set",
   "same_animacy_other" = "Same Animacy, In Train Set",
   "diff_animacy_other" = "Different Animacy, In Train Set",
   "controls" = "Controls",
