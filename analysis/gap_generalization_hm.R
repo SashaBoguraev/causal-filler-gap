@@ -8,7 +8,7 @@ library(ggsignif)
 library(reshape2)
 library(arrow)
 
-setwd("~/Desktop/UT/Projects/causal-filler-gap/analysis")
+
 model_size = "2.8b"
 model_name = paste0("pythia-", model_size)
 
