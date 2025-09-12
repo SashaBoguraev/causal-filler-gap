@@ -79,7 +79,7 @@ If you are having any issues running any code, please do not hesitate to reach o
 
 
 ## Citation
-If you use any of our code in 
+If you use any of our code in you work, please cite:
 ```bibtex
 @misc{boguraev2025causalinterventionsrevealshared,
       title={Causal Interventions Reveal Shared Structure Across English Filler-Gap Constructions}, 
