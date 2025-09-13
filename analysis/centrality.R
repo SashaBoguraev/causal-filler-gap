@@ -7,6 +7,7 @@ library(extrafont)
 library(rstatix)  
 library(tidyr)
 library(patchwork)
+library(ggrepel)
 
 model_suffix = "_1.4b"
 
@@ -125,145 +126,73 @@ label_colors <- c(
   "Topicalization" = "#e377c2" # Pink
 )
 
-# Make text readable
-# df_avg_freq_jittered_in <- df_avg_freq %>%
-#   filter(Direction == "In-Degree") %>%
-#   mutate(
-#     jitter_x = case_when(
-#       parent == "Topicalization" ~ frequency + 5,
-#       parent == "Pseudocleft" ~ frequency + 3.5,
-#       parent == "Emb. Wh-Q\n(Wonder)" ~ frequency - 175,
-#       parent == "Emb. Wh-Q\n(Know)" ~ frequency,
-#       parent == "Res. Rel.\nClause" ~ frequency - 125,
-#       TRUE ~ frequency + runif(1, -0.01, 0.01)
-#     ),
-#     jitter_y = case_when(
-#       parent == "Topicalization" ~ mean_auc - 0.075,
-#       parent == "Pseudocleft" ~ mean_auc + 0.01, 
-#       parent == "Emb. Wh-Q\n(Wonder)" ~ mean_auc - 0.125,
-#       parent == "Emb. Wh-Q\n(Know)" ~ mean_auc -.035 ,
-#       parent == "Res. Rel.\nClause" ~ mean_auc - 0.15, 
-#       TRUE ~ mean_auc + runif(1, -0.02, 0.02)
-#     )
-#   )
-# 
-# df_avg_freq_jittered_out <- df_avg_freq %>%
-#   filter(Direction == "Out-Degree") %>%
-#   mutate(
-#     jitter_x = case_when(
-#       parent == "Topicalization" ~ frequency + 5,
-#       parent == "Pseudocleft" ~ frequency + 3.5,
-#       parent == "Emb. Wh-Q\n(Wonder)" ~ frequency,
-#       parent == "Emb. Wh-Q\n(Know)" ~ frequency -.035,
-#       parent == "Res. Rel.\nClause" ~ frequency - 125,
-#       TRUE ~ frequency + runif(1, -0.01, 0.01)
-#     ),
-#     jitter_y = case_when(
-#       parent == "Topicalization" ~ mean_auc + 0.01,
-#       parent == "Pseudocleft" ~ mean_auc - 0.075, 
-#       parent == "Emb. Wh-Q\n(Wonder)" ~ mean_auc - 0.13,
-#       parent == "Emb. Wh-Q\n(Know)" ~ mean_auc - .035 ,
-#       parent == "Res. Rel.\nClause" ~ mean_auc - 0.125, 
-#       parent == "Matrix Wh-Q" ~ mean_auc - 0.05, 
-#       TRUE ~ mean_auc + runif(1, -0.02, 0.02)
-#     )
-#   )
-
 df_avg_freq_jittered_in <- df_avg_freq %>%
-  filter(Direction == "In-Degree") %>%
+  filter(Direction == "In-Degree") %>% 
   mutate(
-    jitter_x = case_when(
-      parent == "Topicalization" ~ frequency + 4,
-      parent == "Pseudocleft" ~ frequency + 3.5,
-      parent == "Emb. Wh-Q\n(Wonder)" ~ frequency - 175,
-      parent == "Emb. Wh-Q\n(Know)" ~ frequency,
-      parent == "Res. Rel.\nClause" ~ frequency - 100,
-      TRUE ~ frequency + runif(1, -0.01, 0.01)
-    ),
-    jitter_y = case_when(
-      parent == "Topicalization" ~ mean_auc - 0.05,
-      parent == "Pseudocleft" ~ mean_auc + 0.01, 
-      parent == "Emb. Wh-Q\n(Wonder)" ~ mean_auc - 0.1,
-      parent == "Emb. Wh-Q\n(Know)" ~ mean_auc -.035 ,
-      parent == "Res. Rel.\nClause" ~ mean_auc - 0.105, 
-      TRUE ~ mean_auc + runif(1, -0.02, 0.02)
+    nudge_y = case_when(
+      parent == "Emb. Wh-Q\n(Know)" ~ 0.03,
+      parent == "Matrix Wh-Q" ~ 0.02,
+      parent == "Topicalization" ~ -0.06,
+      parent == "Cleft" ~ -0.015,
+      TRUE ~ 0
     )
   )
 
 df_avg_freq_jittered_out <- df_avg_freq %>%
-  filter(Direction == "Out-Degree") %>%
+  filter(Direction == "Out-Degree") %>% 
   mutate(
-    jitter_x = case_when(
-      parent == "Topicalization" ~ frequency + 5,
-      parent == "Pseudocleft" ~ frequency + 3.5,
-      parent == "Emb. Wh-Q\n(Wonder)" ~ frequency,
-      parent == "Emb. Wh-Q\n(Know)" ~ frequency -.035,
-      parent == "Res. Rel.\nClause" ~ frequency - 200,
-      TRUE ~ frequency + runif(1, -0.01, 0.01)
-    ),
-    jitter_y = case_when(
-      parent == "Topicalization" ~ mean_auc + 0.01,
-      parent == "Pseudocleft" ~ mean_auc - 0.075, 
-      parent == "Emb. Wh-Q\n(Wonder)" ~ mean_auc - 0.125,
-      parent == "Emb. Wh-Q\n(Know)" ~ mean_auc - .035 ,
-      parent == "Res. Rel.\nClause" ~ mean_auc- 0.07, 
-      parent == "Matrix Wh-Q" ~ mean_auc - 0.05, 
-      TRUE ~ mean_auc + runif(1, -0.02, 0.02)
+    nudge_y = case_when(
+      parent == "Emb. Wh-Q\n(Wonder)" ~ 0.05,
+      parent == "Matrix Wh-Q" ~ -0.02,
+      parent == "Topicalization" ~ 0.03,
+      parent == "Cleft" ~ 0.01,
+      TRUE ~ 0
     )
   )
 
-
 p_in_scatter <- ggplot(df_avg_freq_jittered_in,
-                       aes(x = frequency, y = mean_auc)) +  # removed color here
-  geom_smooth(method = 'lm', se = FALSE, linetype = "dotted", color = "black") +  # dotted line
-  geom_point(aes(color = parent), size = 3, alpha = 0.5) +
-  geom_text(aes(x = jitter_x, y = jitter_y, label = parent, color = parent), 
-            vjust = -1, size = 4, family = "Palatino", fontface = "bold")+ 
+                       aes(x = frequency, y = mean_auc)) +
+  geom_smooth(method = 'lm', se = FALSE, linetype = "dotted", color = "black") +
+  geom_point(aes(color = parent), size = 4, alpha = 0.5) +
+  geom_text_repel(aes(label = parent, color = parent),
+                  size = 5, family = "Palatino", fontface = "bold",
+                  max.overlaps = Inf, force = 2, box.padding = 0.5,
+                  nudge_y = df_avg_freq_jittered_in$nudge_y
+  ) +
   labs(
     title = "In-Degree",
     x = NULL,
     y = "Mean AUC"
   ) +
   scale_x_log10() +
-  ylim(0, .6) +
+  ylim(0, .5) +
   scale_color_manual(values = label_colors) +
   base_theme +
-  # theme(
-  #   # Keep y-axis text and ticks
-  #   axis.text.x = element_blank(),  
-  #   axis.ticks.x = element_blank(),  
-  #   axis.title.x = element_blank(),  
-  #   axis.title.y = element_blank(),  
-  #   plot.title = element_text(size = 36, family = "Palatino", hjust = 0.5, face = "bold"), 
-  #   legend.position = "none" 
-  # )
   theme(
     axis.title.y = element_blank(),
     plot.title = element_text(size = 36, family = "Palatino", hjust = 0.5, face = "bold"),
     legend.position = "none"
   )
 
-
 p_out_scatter <- ggplot(df_avg_freq_jittered_out,
-                        aes(x = frequency, y = mean_auc)) + 
-  geom_smooth(method = 'lm', se = FALSE, linetype = "dotted", color = "black") + 
-  geom_point(aes(color = parent), size = 3, alpha = 0.5) +
-  geom_text(aes(x = jitter_x, y = jitter_y, label = parent, color = parent), 
-            vjust = -1, size = 4, family = "Palatino", fontface = "bold") + 
+                        aes(x = frequency, y = mean_auc)) +
+  geom_smooth(method = 'lm', se = FALSE, linetype = "dotted", color = "black") +
+  geom_point(aes(color = parent), size = 4, alpha = 0.5) +
+  geom_text_repel(
+    aes(label = parent, color = parent),
+    size = 5, family = "Palatino", fontface = "bold",
+    max.overlaps = Inf, force = 2, box.padding = 0.5,
+    nudge_y = df_avg_freq_jittered_out$nudge_y
+  ) +
   labs(
     title = "Out-Degree",
     x = NULL,
     y = NULL
   ) +
   scale_x_log10() +
-  ylim(0, .6) +
+  ylim(0, .5) +
   scale_color_manual(values = label_colors) +
   base_theme +
-  # theme(
-  #   axis.title.x = element_blank(),
-  #   plot.title = element_text(size = 36, family = "Palatino", hjust = 0.5, face = "bold"),
-  #   legend.position = "none"
-  # )
   theme(
     axis.title.y = element_blank(),
     plot.title = element_text(size = 36, family = "Palatino", hjust = 0.5, face = "bold"),
@@ -279,11 +208,6 @@ common_y_title <- ggplot() +
 
 combined_plot <- p_in_scatter + p_out_scatter + 
   plot_layout(ncol = 2, widths = c(1, 1), guides = "collect")
-
-# common_y_title <- ggplot() + 
-#   annotate("text", x = 0, y = 0.5, label = "Mean AUC", 
-#            angle = 90, size = 12, family = "Palatino", fontface = "bold") +
-#   theme_void()
 
 final_plot <- (common_y_title + combined_plot) + 
   plot_layout(widths = c(0.05, 1)) +

@@ -7,7 +7,7 @@ library(extrafont)
 library(rstatix)  
 library(tidyr)
 
-model_size = "6.9b"
+model_size = "1.4b"
 model_name = paste0("pythia-", model_size)
 
 generalization_df <- read_parquet("../results/generalization/leave_out.parquet")
