@@ -8,8 +8,7 @@ library(ggsignif)
 library(reshape2)
 library(arrow)
 
-setwd("~/Desktop/UT/Projects/causal-filler-gap/analysis")
-model_size = "2.8b"
+model_size = "1.4b"
 model_name = paste0("pythia-", model_size)
 
 generalization_df <- read_parquet("../results/generalization/classic.parquet")
